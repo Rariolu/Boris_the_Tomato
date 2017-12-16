@@ -47,7 +47,7 @@ class LetterSelector
 		//A method which decrements the index of the current letter.
 		void DecrementIndex();
 		//The index of the current letter.
-		size_t index = 0;
+		int index = 0;
 		//A pointer to all the sprites associated with this class.
 		vector<Sprite*>* sprites;
 		//A method which displays the current letter.
