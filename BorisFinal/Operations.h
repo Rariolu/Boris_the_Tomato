@@ -4,13 +4,18 @@
 #include <cstring>
 #include <iostream>
 #include <sstream>
+#if defined(_WIN32) || defined(_WIN64)
 #include <Windows.h>
+#endif
 #include <SDL.h>
 #include <SDL_mixer.h>
 #include <vector>
 #include <map>
 #include <algorithm>
 #include<string>
+#include <math.h>
+#include <filesystem>
+#include<sys/stat.h>
 
 using namespace std;
 

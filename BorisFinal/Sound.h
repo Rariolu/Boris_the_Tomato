@@ -2,7 +2,9 @@
 #define _SOUND_H
 
 #include <stdlib.h>
+#if defined(_WIN32) || defined(_WIN64)
 #include <Windows.h>
+#endif
 #include <iostream>
 #include <cstdlib>
 #include <SDL.h>

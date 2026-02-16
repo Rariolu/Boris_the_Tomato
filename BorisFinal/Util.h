@@ -5,7 +5,9 @@
 #include<SDL_mixer.h>
 #include<string>
 #include<iostream>
-#include<Windows.h>
+#if defined(_WIN32) || defined(_WIN64)
+#include <Windows.h>
+#endif
 
 
 using namespace std;
