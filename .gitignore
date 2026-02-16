@@ -1,0 +1,8 @@
+*.d
+*.o
+*.exe
+BorisTheTomato
+
+/Executable
+/Scores
+/BorisFinal/Scores
