@@ -40,12 +40,12 @@ class Operations
 		//A method which returns a string representing a given number
 		//padded with 0s to show a given amount of digits.
 		static string PadNumber(int num, int idealsize);
-		//A method which returns an LPCSTR value representing a given integer.
-		static LPCSTR Int_to_LPCSTR(int num);
-		//A method which returns an LPCSTR value representing a string.
-		static LPCSTR String_to_LPCSTR(string str);
-		//A method which returns an LPCSTR value representing a character.
-		static LPCSTR Char_to_LPCSTR(char c);
+		//A method which returns a const char* value representing a given integer.
+		static const char* Int_to_LPCSTR(int num);
+		//A method which returns a const char* value representing a string.
+		static const char* String_to_LPCSTR(string str);
+		//A method which returns a const char* value representing a character.
+		static const char* Char_to_LPCSTR(char c);
 		//A method which returns a boolean representing
 		//whether or not a given file path exists.
 		static bool FileExists(const string &filename);
@@ -58,9 +58,9 @@ class Operations
 		//it doesn't already exist.
 		static void CreateFolder(string dirname);
 	private:
-		//An array containing LPCSTR values representing
+		//An array containing const char* values representing
 		//the digits 0-9.
-		static vector<LPCSTR> numbers();
+		static vector<const char*> numbers();
 };
 
 #endif

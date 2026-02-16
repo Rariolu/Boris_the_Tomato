@@ -16,15 +16,15 @@ class Font
 {
 	public:
 		//Constructor, takes file path of font to be loaded, size of the font, and a pointer to the sdl renderer.
-		Font(LPCSTR filename,int fontSize,SDL_Renderer* _renderer);
+		Font(const char* filename,int fontSize,SDL_Renderer* _renderer);
 		//Constructor, takes the same parameters as the previous one but also takes sdl colours representing the foreground and background colours.
-		Font(LPCSTR filename, int fontSize, SDL_Renderer* _renderer, SDL_Color text_colour, SDL_Color background_colour);
+		Font(const char* filename, int fontSize, SDL_Renderer* _renderer, SDL_Color text_colour, SDL_Color background_colour);
 		//Destructor method.
 		~Font();
 		//Returns a pointer to the "TTF_Font" value which represents the font information in the context of the sdl library.
 		TTF_Font* GetFont();
 		//A method which creates a texture resembling given text and displays it differently depending on the given "TextType".
-		Texture* CreateTextTexture(LPCSTR text, TextType text_type);
+		Texture* CreateTextTexture(const char* text, TextType text_type);
 	private:
 		//A pointer to the "TTF_Font" value which represents the font information in the context of the sdl library.
 		TTF_Font* ttfFont;

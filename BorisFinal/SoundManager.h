@@ -16,7 +16,7 @@ class SoundManager
 		//A method which returns a pointer to the only instance of this class.
 		static SoundManager* GetInstance();
 		//Add a sound using a given file path and sound type.
-		void AddSound(string soundName, LPCSTR fileName, SoundType soundtype);
+		void AddSound(string soundName, const char* fileName, SoundType soundtype);
 		//Return a pointer to an instance of "Sound" using a given name.
 		Sound* GetSound(string soundName);
 		//A method that deletes all the stored sounds.

@@ -42,7 +42,7 @@ void TextureManager::AddTexture(string textureName,Texture* texture)//(LPCSTR te
 	cout << "The current texture count is " << Count() << endl;
 }
 
-void TextureManager::AddTexture(string textureName, LPCSTR filename)//(LPCSTR textureName, LPCSTR filename)
+void TextureManager::AddTexture(string textureName, const char* filename)//(LPCSTR textureName, LPCSTR filename)
 {
 	Texture* texture = new Texture(filename, theSDLRenderer);
 	AddTexture(textureName, texture);

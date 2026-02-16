@@ -38,10 +38,9 @@ SoundManager* SoundManager::GetInstance()
 	return _instance;
 }
 
-Sound* SoundManager::GetSound(string soundname)//(LPCSTR soundname)
+Sound* SoundManager::GetSound(string soundname)//(const char* soundname)
 {
 	map<string, Sound*>::iterator sound = sounds.find(soundname);
-	//map<LPCSTR, Sound*>::iterator sound = sounds.find(soundname);
 	if (sound != sounds.end())
 	{
 		return sound->second;

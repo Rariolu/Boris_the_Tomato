@@ -1,7 +1,7 @@
 #include "Sound.h"
 
 
-Sound::Sound(LPCSTR filename, SoundType sound_type)
+Sound::Sound(const char* filename, SoundType sound_type)
 {
 	soundType = sound_type;
 	switch (soundType)

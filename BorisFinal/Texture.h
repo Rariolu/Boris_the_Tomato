@@ -29,7 +29,7 @@ class Texture
 {
 	public:
 		//Constructor, loads an image from given file path.
-		Texture(LPCSTR theFilename, SDL_Renderer *theRenderer);
+		Texture(const char* theFilename, SDL_Renderer *theRenderer);
 		//Constructor, sets the sdl texture to the given value.
 		Texture(SDL_Texture* texture, SDL_Renderer* theRenderer);
 		//Destructor method.

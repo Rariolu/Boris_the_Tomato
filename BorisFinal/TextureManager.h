@@ -30,7 +30,7 @@ class TextureManager
 		static TextureManager* getInstance();
 		//A method which adds a texture by loading one from
 		//a given file path.
-		void AddTexture(string texturename, LPCSTR theFilename);
+		void AddTexture(string texturename, const char* theFilename);
 		//A method which adds a given texture.
 		void AddTexture(string texturename, Texture* texture);
 		//A method which returns a pointer to an instance

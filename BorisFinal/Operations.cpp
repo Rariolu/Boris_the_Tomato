@@ -1,9 +1,11 @@
 #include "Operations.h"
 #include<iostream>
+#include<cstring>
 
-vector<LPCSTR> Operations::numbers()
+
+vector<const char*> Operations::numbers()
 {
-	vector<LPCSTR> returner;
+	vector<const char*> returner;
 	returner.push_back("0");
 	returner.push_back("1");
 	returner.push_back("2");
@@ -17,11 +19,14 @@ vector<LPCSTR> Operations::numbers()
 	return returner;
 }
 
-LPCSTR Operations::Char_to_LPCSTR(char c)
+const char* Operations::Char_to_LPCSTR(char c)
 {
 	std::ostringstream ss;
 	ss << c;
-	return _strdup(ss.str().c_str());
+	std::string value = ss.str();
+	char* copy = new char[value.size() + 1];
+	std::memcpy(copy, value.c_str(), value.size() + 1);
+	return copy;
 }
 
 //http://www.cplusplus.com/forum/beginner/4967/
@@ -38,7 +43,11 @@ void Operations::CreateFolder(string dirname)
 {
 	if (!FileExists(dirname))
 	{
-		if (CreateDirectory(String_to_LPCSTR(dirname), NULL))
+#ifdef _MSC_VER
+				if (!CreateDirectory(String_to_LPCSTR(dirname), NULL))
+#else
+				if (!std::filesystem::create_directory(String_to_LPCSTR(dirname)))
+#endif
 		{
 			cout << "\"" << dirname << "\" was just created ^_^" << endl;
 		}
@@ -75,9 +84,9 @@ SDL_Rect Operations::GetSDLRect(FloatRect frect)
 	return {Round(frect.X),Round(frect.Y),Round(frect.W),Round(frect.H)};
 }
 
-LPCSTR Operations::Int_to_LPCSTR(int num)
+const char* Operations::Int_to_LPCSTR(int num)
 {
-	vector<LPCSTR> nums = numbers();
+	vector<const char*> nums = numbers();
 	if (num < 10 && num > -1)
 	{
 		return nums.at(num);
@@ -121,11 +130,14 @@ int Operations::Round(float value)
 	return (int)ceil(value);
 }
 
-LPCSTR Operations::String_to_LPCSTR(string str)
+const char* Operations::String_to_LPCSTR(string str)
 {
 	std::ostringstream ss;
 	ss << str;
-	return _strdup(ss.str().c_str());
+	std::string value = ss.str();
+	char* result = new char[value.size() + 1];
+	std::memcpy(result, value.c_str(), value.size() + 1);
+	return result;
 }
 
 void Operations::WaitForMusicToStop()

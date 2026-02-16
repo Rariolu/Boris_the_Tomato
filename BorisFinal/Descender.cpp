@@ -50,7 +50,7 @@ void Descender::SetMovementPattern(Vector2 movementpattern)
 
 Texture* Descender::GetTextureFromType(DescenderType type)
 {
-	LPCSTR texturename = "";
+	const char* texturename = "";
 	switch (type)
 	{
 		case SCISSORS:

@@ -22,7 +22,7 @@ class Sound
 {
 	public:
 		//Constructor, takes the file path of an audio file and the type of the audio.
-		Sound(LPCSTR filename, SoundType sound_type);
+		Sound(const char* filename, SoundType sound_type);
 		//Destructor method.
 		~Sound();
 		//A method which returns the SoundType of this instance.

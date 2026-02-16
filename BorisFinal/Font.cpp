@@ -1,11 +1,11 @@
 #include "Font.h"
 
-Font::Font(LPCSTR filename, int fontSize,SDL_Renderer* _renderer) : Font(filename,fontSize,_renderer,{0,0,0,0},{255,255,255,255})
+Font::Font(const char* filename, int fontSize,SDL_Renderer* _renderer) : Font(filename,fontSize,_renderer,{0,0,0,0},{255,255,255,255})
 {
 
 }
 
-Font::Font(LPCSTR filename, int fontSize, SDL_Renderer* _renderer, SDL_Color text_colour, SDL_Color background_colour)
+Font::Font(const char* filename, int fontSize, SDL_Renderer* _renderer, SDL_Color text_colour, SDL_Color background_colour)
 {
 	renderer = _renderer;
 	ttfFont = TTF_OpenFont(filename, fontSize);
@@ -29,7 +29,7 @@ TTF_Font* Font::GetFont()
 	return ttfFont;
 }
 
-Texture* Font::CreateTextTexture(LPCSTR text, TextType text_type)//, SDL_Color text_colour, SDL_Color background_colour)
+Texture* Font::CreateTextTexture(const char* text, TextType text_type)//, SDL_Color text_colour, SDL_Color background_colour)
 {
 	SDL_Surface* surface = NULL;
 	if (ttfFont)
