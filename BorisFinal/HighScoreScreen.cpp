@@ -74,7 +74,7 @@ bool HighScoreScreen::GetInput()
 							string message = GetInitials() + ": " + to_string(Util::GetInstance()->GetPoints()) + "\n";
 							cout << message << endl;
 							ofstream file;
-							file.open("Scores\\scores.txt", ios::out | ios::app);
+							file.open("Scores/scores.txt", ios::out | ios::app);
 							file << message;
 							file.close();
 							cout << "Score saved." << endl;

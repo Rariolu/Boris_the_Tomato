@@ -39,8 +39,8 @@ void ResourceSetup(SDL_Renderer* renderer)
 	//A pointer to the only instance of "FontManager".
 	FontManager* fontmanager = FontManager::GetInstance();
 	//Pointers to instances of "Font" which represent the fonts "consolas" and "calibri".
-	Font* consolas = new Font("Fonts\\consolaz.ttf", 50, renderer);
-	Font* calibri = new Font("Fonts\\calibri.ttf", 50, renderer, { 136,0,21,255 }, { 255,255,255,255 });
+	Font* consolas = new Font("Fonts/consolaz.ttf", 50, renderer);
+	Font* calibri = new Font("Fonts/calibri.ttf", 50, renderer, { 136,0,21,255 }, { 255,255,255,255 });
 	//Add the two font pointers to the font manager so they can be referenced for use later.
 	fontmanager->AddFont("Consolas", consolas);
 	fontmanager->AddFont("Calibri", calibri);
@@ -50,47 +50,47 @@ void ResourceSetup(SDL_Renderer* renderer)
 	//Give the renderer pointer to the "texturemanager" so it can be used to create instances of "SDL_Texture".
 	texturemanager->SetRenderer(renderer);
 	//Load various image files as textures which are stored in the texture manager in order to be referenced later.
-	texturemanager->AddTexture("Menu_Background", "Textures\\menuTemp.png");
-	texturemanager->AddTexture("play_game", "Textures\\play_game.png");
-	texturemanager->AddTexture("Level_Background", "Textures\\levelTemp.png");
-	texturemanager->AddTexture("quit", "Textures\\quit.png");
-	texturemanager->AddTexture("resume_game", "Textures\\resume_game.png");
-	texturemanager->AddTexture("gameover", "Textures\\game_over_screen.png");
-	texturemanager->AddTexture("replay", "Textures\\replay.png");
-	texturemanager->AddTexture("options", "Textures\\options.png");
-	texturemanager->AddTexture("back", "Textures\\back.png");
-	texturemanager->AddTexture("scissors", "Textures\\scissors.png");
-	texturemanager->AddTexture("sunlight", "Textures\\sunlight.png");
-	texturemanager->AddTexture("water", "Textures\\water.png");
-	texturemanager->AddTexture("inactive_volumebutton", "Textures\\inactive_volumebutton.png");
-	texturemanager->AddTexture("active_volumebutton", "Textures\\active_volumebutton.png");
-	texturemanager->AddTexture("protruding_leaf", "Textures\\protruding_leaf.png");
-	texturemanager->AddTexture("retracted_leaf", "Textures\\retracted_leaf.png");
-	texturemanager->AddTexture("bottom", "Textures\\bottom.png");
-	texturemanager->AddTexture("health_0", "Textures\\health_0.png");
-	texturemanager->AddTexture("health_50", "Textures\\health_50.png");
-	texturemanager->AddTexture("health_100", "Textures\\health_100.png");
-	texturemanager->AddTexture("health_150", "Textures\\health_150.png");
-	texturemanager->AddTexture("health_200", "Textures\\health_200.png");
-	texturemanager->AddTexture("intro", "Textures\\intro.png");
-	texturemanager->AddTexture("intro_0", "Textures\\intro_0.png");
-	texturemanager->AddTexture("intro_1", "Textures\\intro_1.png");
-	texturemanager->AddTexture("intro_2", "Textures\\intro_2.png");
-	texturemanager->AddTexture("intro_3", "Textures\\intro_3.png");
-	texturemanager->AddTexture("intro_4", "Textures\\intro_4.png");
+	texturemanager->AddTexture("Menu_Background", "Textures/menuTemp.png");
+	texturemanager->AddTexture("play_game", "Textures/play_game.png");
+	texturemanager->AddTexture("Level_Background", "Textures/levelTemp.png");
+	texturemanager->AddTexture("quit", "Textures/quit.png");
+	texturemanager->AddTexture("resume_game", "Textures/resume_game.png");
+	texturemanager->AddTexture("gameover", "Textures/game_over_screen.png");
+	texturemanager->AddTexture("replay", "Textures/replay.png");
+	texturemanager->AddTexture("options", "Textures/options.png");
+	texturemanager->AddTexture("back", "Textures/back.png");
+	texturemanager->AddTexture("scissors", "Textures/scissors.png");
+	texturemanager->AddTexture("sunlight", "Textures/sunlight.png");
+	texturemanager->AddTexture("water", "Textures/water.png");
+	texturemanager->AddTexture("inactive_volumebutton", "Textures/inactive_volumebutton.png");
+	texturemanager->AddTexture("active_volumebutton", "Textures/active_volumebutton.png");
+	texturemanager->AddTexture("protruding_leaf", "Textures/protruding_leaf.png");
+	texturemanager->AddTexture("retracted_leaf", "Textures/retracted_leaf.png");
+	texturemanager->AddTexture("bottom", "Textures/bottom.png");
+	texturemanager->AddTexture("health_0", "Textures/health_0.png");
+	texturemanager->AddTexture("health_50", "Textures/health_50.png");
+	texturemanager->AddTexture("health_100", "Textures/health_100.png");
+	texturemanager->AddTexture("health_150", "Textures/health_150.png");
+	texturemanager->AddTexture("health_200", "Textures/health_200.png");
+	texturemanager->AddTexture("intro", "Textures/intro.png");
+	texturemanager->AddTexture("intro_0", "Textures/intro_0.png");
+	texturemanager->AddTexture("intro_1", "Textures/intro_1.png");
+	texturemanager->AddTexture("intro_2", "Textures/intro_2.png");
+	texturemanager->AddTexture("intro_3", "Textures/intro_3.png");
+	texturemanager->AddTexture("intro_4", "Textures/intro_4.png");
 
-	texturemanager->AddTexture("intro_button", "Textures\\intro_button.png");
-	texturemanager->AddTexture("highscore", "Textures\\highscore.png");
-	texturemanager->AddTexture("save_high_score", "Textures\\save_high_score.png");
-	texturemanager->AddTexture("arrow", "Textures\\arrow.png");
-	texturemanager->AddTexture("down_arrow", "Textures\\down_arrow.png");
-	texturemanager->AddTexture("save_button", "Textures\\save_button.png");
+	texturemanager->AddTexture("intro_button", "Textures/intro_button.png");
+	texturemanager->AddTexture("highscore", "Textures/highscore.png");
+	texturemanager->AddTexture("save_high_score", "Textures/save_high_score.png");
+	texturemanager->AddTexture("arrow", "Textures/arrow.png");
+	texturemanager->AddTexture("down_arrow", "Textures/down_arrow.png");
+	texturemanager->AddTexture("save_button", "Textures/save_button.png");
 
 	//Create textures for the digits 0-9 and add them to the texture manager.
 	for (int i = 0; i < 10; i++)
 	{
 		//Create an "LPCSTR" representation of the value of "i".
-		LPCSTR name = Operations::Int_to_LPCSTR(i);
+		const char* name = Operations::Int_to_LPCSTR(i);
 		//Add a texture to the texturemanager which is created using the "Consolas" font and the value of "name".
 		texturemanager->AddTexture(name, fontmanager->GetFont("Consolas")->CreateTextTexture(name, SOLID));
 	}
@@ -98,16 +98,16 @@ void ResourceSetup(SDL_Renderer* renderer)
 	//A pointer to the only instance of "SoundManager".
 	SoundManager* soundmanager = SoundManager::GetInstance();
 	//Load various sound files and add them to the sound manager in order to reference them later.
-	soundmanager->AddSound("click", "Sounds\\mouse_click.wav", SFX);
-	soundmanager->AddSound("levelmusic", "Sounds\\Boris_the_Tomato.wav", MUSIC);
-	soundmanager->AddSound("gameover", "Sounds\\Boris_Game_Over.wav",MUSIC);
-	soundmanager->AddSound("menu", "Sounds\\Boris_Menu.wav",MUSIC);
-	soundmanager->AddSound("damage", "Sounds\\baseDamage.wav",SFX);
-	soundmanager->AddSound("intro", "Sounds\\Boris_Intro.wav", MUSIC);
-	soundmanager->AddSound("collection", "Sounds\\Collection.wav", SFX);
-	soundmanager->AddSound("scissors", "Sounds\\scissors.wav",SFX);
-	soundmanager->AddSound("protrude", "Sounds\\Protrude_Leaf.wav", SFX);
-	soundmanager->AddSound("retract", "Sounds\\Retract_Leaf.wav", SFX);
+	soundmanager->AddSound("click", "Sounds/mouse_click.wav", SFX);
+	soundmanager->AddSound("levelmusic", "Sounds/Boris_the_Tomato.wav", MUSIC);
+	soundmanager->AddSound("gameover", "Sounds/Boris_Game_Over.wav",MUSIC);
+	soundmanager->AddSound("menu", "Sounds/Boris_Menu.wav",MUSIC);
+	soundmanager->AddSound("damage", "Sounds/baseDamage.wav",SFX);
+	soundmanager->AddSound("intro", "Sounds/Boris_Intro.wav", MUSIC);
+	soundmanager->AddSound("collection", "Sounds/Collection.wav", SFX);
+	soundmanager->AddSound("scissors", "Sounds/scissors.wav",SFX);
+	soundmanager->AddSound("protrude", "Sounds/Protrude_Leaf.wav", SFX);
+	soundmanager->AddSound("retract", "Sounds/Retract_Leaf.wav", SFX);
 
 	//A pointer to the only instance of "SceneManager".
 	SceneManager* scenemanager = SceneManager::GetInstance();
