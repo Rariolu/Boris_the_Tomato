@@ -120,7 +120,7 @@ class Sprite
 		bool active = false;
 		//A FloatRect which is used to represent 
 		//the position and dimensions of the sprite
-		FloatRect position;
+		FloatRect position= {};
 		//A value representing the sprite's current type.
 		SpriteType sprite_type = REGULAR;
 };

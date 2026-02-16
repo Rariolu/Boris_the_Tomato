@@ -50,17 +50,17 @@ class Texture
 		static Texture* NANTexture(SDL_Renderer* renderer);
 	private:
 		//A value representing the texture in its SDL context.
-		SDL_Texture* sdlTexture;
+		SDL_Texture* sdlTexture = nullptr;
 		//A value representing the width of the texture.
-		int width;
+		int width = 0;
 		//A value representing the height of the texture.
-		int height;
+		int height = 0;
 		//A method which attempts to load a given texture and returns
 		//a boolean which depends on whether or not the loading 
 		//was successful.
 		bool LoadTexture(SDL_Texture* texture);
 		//A pointer to the sdl renderer.
-		SDL_Renderer* mainRenderer;
+		SDL_Renderer* mainRenderer = nullptr;
 		//A method which returns a generic, blank SDL texture.
 		static SDL_Texture* BlankSDLTexture(SDL_Renderer* renderer);
 };

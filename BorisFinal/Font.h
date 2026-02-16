@@ -27,13 +27,13 @@ class Font
 		Texture* CreateTextTexture(const char* text, TextType text_type);
 	private:
 		//A pointer to the "TTF_Font" value which represents the font information in the context of the sdl library.
-		TTF_Font* ttfFont;
+		TTF_Font* ttfFont = nullptr;
 		//A pointer to the sdl renderer used in the current window.
-		SDL_Renderer* renderer;
+		SDL_Renderer* renderer = nullptr;
 		//A value used for the foreground colour of the text.
-		SDL_Color textColour;
+		SDL_Color textColour = {0, 0, 0, 0};
 		//A value used for the background colour of the text.
-		SDL_Color backgroundColour;
+		SDL_Color backgroundColour = {255, 255, 255, 255};
 };
 
 #endif

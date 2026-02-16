@@ -55,7 +55,7 @@ class TextureManager
 		//and pointers to instances of "Texture" as values.
 		map<string, Texture*> textureList;
 		//The sdl renderer.
-		SDL_Renderer* theSDLRenderer;
+		SDL_Renderer* theSDLRenderer = nullptr;
 };
 
 #endif

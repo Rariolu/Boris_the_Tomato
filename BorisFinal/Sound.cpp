@@ -9,7 +9,7 @@ Sound::Sound(const char* filename, SoundType sound_type)
 		case SFX:
 		{
 			sound = Mix_LoadWAV(filename);
-			if (sound == 0)
+			if (sound == nullptr)
 			{
 				cout << "Sound FX '" << filename << "' could not be loaded. " << SDL_GetError() << endl;
 			}
@@ -24,7 +24,7 @@ Sound::Sound(const char* filename, SoundType sound_type)
 		{
 			music = Mix_LoadMUS(filename);
 			cout <<Mix_GetError()<< endl;
-			if (music == 0)
+			if (music == nullptr)
 			{
 				cout << "Music '" << filename << "' could not be loaded. " << SDL_GetError() << endl;
 			}
