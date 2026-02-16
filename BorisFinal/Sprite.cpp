@@ -27,7 +27,8 @@ Sprite::~Sprite()
 //Make the sprite appear in the window at its given position.
 void Sprite::Render()
 {
-	Render(&dimension, &GetPosition());
+	SDL_Rect pos = GetPosition();
+	Render(&dimension, &pos);
 }
 
 void Sprite::Render(SDL_Rect* source, SDL_Rect* dest)
@@ -171,7 +172,8 @@ void Sprite::Translate(Vector2 translation)
 
 bool Sprite::CollidesWith(SDL_Rect* boundary)
 {
-	return SDL_HasIntersection(&GetPosition(), boundary);
+	SDL_Rect pos = GetPosition();
+	return SDL_HasIntersection(&pos, boundary);
 }
 
 bool Sprite::CollidesWith(Sprite* otherSprite)
@@ -180,12 +182,14 @@ bool Sprite::CollidesWith(Sprite* otherSprite)
 	{
 		return false;
 	}
-	return CollidesWith(&Operations::GetExpandedRect(otherSprite->GetPosition(),10));
+	SDL_Rect otherPos = Operations::GetExpandedRect(otherSprite->GetPosition(),10);
+	return CollidesWith(&otherPos);
 }
 //Left mouse button pressed on the position of the sprite.
 bool Sprite::Clicked(SDL_Point* mouseposition)
 {
-	return IsActive() && SDL_PointInRect(mouseposition, &GetPosition());
+	SDL_Rect pos = GetPosition();
+	return IsActive() && SDL_PointInRect(mouseposition, &pos);
 }
 
 void Sprite::SetSpriteType(SpriteType type)
