@@ -1,6 +1,6 @@
 #include "Texture.h"
 
-Texture::Texture(LPCSTR filename, SDL_Renderer* renderer) : Texture(IMG_LoadTexture(renderer,filename),renderer)
+Texture::Texture(const char* filename, SDL_Renderer* renderer) : Texture(IMG_LoadTexture(renderer,filename),renderer)
 {
 	//mainRenderer = renderer;
 	//LoadTexture(filename);
@@ -14,7 +14,11 @@ Texture::Texture(SDL_Texture* texture, SDL_Renderer* renderer)
 
 Texture::~Texture()
 {
-	delete this;
+	if (sdlTexture)
+	{
+		SDL_DestroyTexture(sdlTexture);
+		sdlTexture = nullptr;
+	}
 }
 
 int Texture::getHeight()

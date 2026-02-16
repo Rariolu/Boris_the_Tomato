@@ -48,7 +48,7 @@ Sound* SoundManager::GetSound(string soundname)//(const char* soundname)
 	return NULL;
 }
 
-void SoundManager::AddSound(string soundname, LPCSTR filename, SoundType soundtype)//(LPCSTR soundname, LPCSTR filename, SoundType soundtype)
+void SoundManager::AddSound(string soundname, const char* filename, SoundType soundtype)//(LPCSTR soundname, LPCSTR filename, SoundType soundtype)
 {
 	if (!GetSound(soundname))
 	{
@@ -63,4 +63,5 @@ void SoundManager::DeleteSounds()
 	{
 		delete sound->second;
 	}
+	sounds.clear();
 }
